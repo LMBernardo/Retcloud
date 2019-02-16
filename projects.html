@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<div class="container">
+  <h1 class="mt-5">Current</h1>
+  <!-- <p class="lead">Site in progress..</p> -->
+
+  <div class="container">
+    <div class="card-deck">
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+  firebase.firestore().collection("Projects").get().then(function(querySnapshot) {
+    let i = 0;
+    querySnapshot.forEach(function(doc) {
+      console.log(doc.id, " => ", doc.data());
+      var card = generateCard(doc.data(), i);
+      console.log(card);
+      $('.card-deck').append(card);
+      i++;
+    });
+  });
+</script>
+
+<script src="nav-page.js"></script>
+<script>
+  AOS.init();
+</script>
+
+</html>
