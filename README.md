@@ -1,2 +1,2 @@
-# Retcloud
-Personal website utilizing Bootstrap and Firebase
+# Retnuh.us
+Personal website based on Bootstrap
