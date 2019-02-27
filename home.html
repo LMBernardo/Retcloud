@@ -1,9 +1,33 @@
 <!DOCTYPE html>
 <html>
 <div class="container">
-  <h1 class="mt-5">Welcome home.</h1>
-  <p class="lead">Site in progress..</p>
+  <!-- <h1 class="mt-5">Welcome home.</h1>
+  <p class="lead">Site in progress..</p> -->
   <script src="nav-page.js"></script>
 </div>
+
+<div class="container">
+  <div class="blog-posts">
+  </div>
+</div>
+</div>
+</div>
+
+<script>
+  firebase.firestore().collection("Blog").orderBy("timestamp").get().then(function(querySnapshot) {
+    let i = 0;
+    querySnapshot.forEach(function(doc) {
+      console.log(doc.id, " => ", doc.data());
+      var jumbo = generateJumbo(doc.data(), i);
+      console.log(jumbo);
+      $('.blog-posts').append(jumbo);
+      i++;
+    });
+  });
+</script>
+
+<script>
+  AOS.init();
+</script>
 
 </html>

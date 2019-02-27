@@ -79,3 +79,24 @@ function generateCard(cardData, index) {
      '</div>'
    ].join('');
  }
+
+ // Generate jumbotrons
+ function generateJumbo(jumboData, index){
+   var jumboTitle = jumboData.title;
+   var jumboDescription = jumboData.description;
+   //var jumboImage = jumboData.image;
+   var jumboLink = jumboData.link;
+   var jumboLinkTitle = jumboData.linkTitle;
+   var jumboDelay = 250*index;
+   return [
+     '<div class="container">',
+       '<div class="jumbotron pt-4 pl-4 pr-4 pb-0" data-aos-delay="' + jumboDelay + '" data-aos-duration="1000" class="item" data-aos="fade-left">',
+      '<h1>' + jumboTitle + '</h1>',
+      '<p>' + jumboDescription + '</p>',
+      '<div class="row justify-content-md-end p-3">',
+      '<p><a class="btn btn-primary btn-lg" href="#" role="button">' + jumboLinkTitle + '</a></p>',
+     '</div>',
+     '</div>',
+     '</div>'
+  ].join('');
+ }

@@ -2,7 +2,6 @@
 <html>
 <div class="container">
   <h1 class="mt-5">Current</h1>
-  <!-- <p class="lead">Site in progress..</p> -->
 
   <div class="container">
     <div class="card-deck">
@@ -12,7 +11,7 @@
 </div>
 
 <script>
-  firebase.firestore().collection("Projects").get().then(function(querySnapshot) {
+  firebase.firestore().collection("Projects").orderBy("position").get().then(function(querySnapshot) {
     let i = 0;
     querySnapshot.forEach(function(doc) {
       console.log(doc.id, " => ", doc.data());
