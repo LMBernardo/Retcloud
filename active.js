@@ -17,7 +17,7 @@ function getContent(name){
   if (name == "/" || name == "/index.html"){ name = "home.html"; }
   jQuery.get(name, function(data) { // Perform AJAX GET request
     console.log("Retrieving " + name);
-    jQuery('#page-content').html(data); // If the request is successful, load the response inside the path-content div
+    jQuery('#page-content').html(data); // If the request is successful, load the response inside the page-content div
   });
 }
 
